@@ -1,0 +1,64 @@
+/* 这个样式库让输入框列表行在渲染时从左边进入 */
+/* 示例：Ctrl + D */
+
+.monaco-list-row:not(
+    .explorer-folders-view .monaco-list-row,
+    .outline-pane .monaco-list-row,
+    .monaco-editor .overflowingContentWidgets .monaco-list-row,
+    .action-widget .monaco-list-row,
+    .interactive-session .monaco-list-row
+  ) {
+  animation: scrollingAnimation4 200ms;
+}
+
+.quick-input-widget .monaco-list-rows[style*="top: 0px;"] .monaco-list-row,
+.settings-tree-container
+  .monaco-list-rows[style*="top: 0px;"]
+  .monaco-list-row {
+  animation-duration: 0ms;
+}
+
+@keyframes scrollingAnimation1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scrollingAnimation2 {
+  from {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scrollingAnimation3 {
+  from {
+    opacity: 0.5;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scrollingAnimation4 {
+  0% {
+    opacity: 0.5;
+    transform: translateX(-50%);
+  }
+  40% {
+    opacity: 0.8;
+    transform: translateX(5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "vscode-teriri-style",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass2css": "sass --watch D:\\Project\\vscode-css\\vscode-teriri-style\\temp.scss:D:\\Project\\vscode-css\\vscode-teriri-style\\temp.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "scss": "^0.2.4"
+  }
+}

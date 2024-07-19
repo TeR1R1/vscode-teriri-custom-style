@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style lang="text/css">
+  .bg {
+    margin: 120px;
+    color: aliceblue;
+    background-color: #222;
+    height: 300px;
+    width: 300px;
+    transition: text-shadow 500ms ease, ease 500ms ease;
+  }
+
+  .bg::after {
+    content: "德丽莎世界第一可爱";
+    display: inline-block;
+    animation: a 5s ease;
+  }
+
+  .bg:hover {
+    color: red;
+    text-shadow: 0 0 50px #fff;
+  }
+  @keyframes a {
+    0% {
+      opacity: 0;
+      transform: translateX(500px);
+    }
+    40% {
+      opacity: 1;
+      transform: translateX(100px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+</style>
+<body>
+  <div class="bg">
+    <div style="width: 20px; height: 20px; background-color: red;"></div>
+  </div>
+</body>
+</html>

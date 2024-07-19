@@ -1,0 +1,75 @@
+
+.tabs-container > .tab.moveLeft {
+  transform-origin: left;
+  z-index: 2;
+}
+
+.tabs-container > .tab.moveRight {
+  transform-origin: left;
+  animation: tabMoveRight 300ms;
+  z-index: 2;
+}
+
+.tabs-container > .tab.newTab {
+  transform-origin: left;
+  animation: openTab3 300ms;
+}
+
+.tabs-container > .tab {
+  z-index: 2;
+}
+
+@keyframes openTab1 {
+  from {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+@keyframes openTab2 {
+  from {
+    z-index: 1;
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    z-index: 1;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes openTab3 {
+  from {
+    z-index: 1;
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    z-index: 1;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes tabMoveLeft {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes tabMoveRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}

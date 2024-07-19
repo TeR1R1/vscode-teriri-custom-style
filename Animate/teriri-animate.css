@@ -1,0 +1,487 @@
+/* 这里的都没解耦 */
+
+/* 破坏性的特效 */
+.monaco-scrollable-element {
+  animation: monacoScrollableElementAnimate 80ms ease;
+}
+
+@keyframes monacoScrollableElementAnimate {
+  0% {
+    opacity: 0;
+    transform: scale(90%);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(101%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
+/* 主进程窗口全局字体 (中文状态) */
+.windows:lang(zh-Hans) {
+  font-family: "HarmonyOS Sans NaskhArabic UI", "HarmonyOS Sans SC", monospace;
+  font-weight: 500;
+}
+
+/* 全局字体渐变 */
+/* span {
+  transition: color 0.3s ease-in !important;
+} */
+
+/* 编辑器底色统一 - 样式*/
+.monaco-workbench {
+  background-color: var(--vscode-editor-background);
+}
+
+/* 提示灯泡的移动 */
+.lightBulbWidget {
+  transition: top 200ms;
+}
+
+/* 鼠标悬停标签栏 */
+.tabs-container > .tab:hover {
+  --font-color0: var(--vscode-tab-inactiveForeground);
+  --font-color1: #fff;
+  animation: fadeLightIn 150ms forwards;
+}
+.tabs-container > .tab.active {
+  border-bottom: 1px solid var(--tab-border-bottom-color);
+  animation: tab-active-animate 300ms forwards;
+}
+
+@keyframes tab-active-animate {
+  0% {
+    scale: 1;
+    color: var(--vscode-tab-inactiveForeground);
+    text-shadow: 0 0 0 var(--vscode-tab-inactiveForeground);
+    box-shadow: 0 0 0 var(--tab-border-bottom-color);
+  }
+  40% {
+    scale: 1.05;
+  }
+  100% {
+    scale: 1;
+    color: var(--vscode-tab-activeForeground);
+    text-shadow: 0 0 1px var(--vscode-tab-activeForeground);
+    box-shadow: inset 0 -6px 16px -16px var(--tab-border-bottom-color);
+  }
+}
+
+/* 上面节点预览那 */
+.monaco-breadcrumb-item {
+  animation: monacoBreadcrumbItem 0.3s ease;
+}
+
+@keyframes monacoBreadcrumbItem {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  40% {
+    opacity: 1;
+    transform: translateX(1%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* 文件侧边栏 */
+/* 需要实现两个类：
+    .selected
+    .focused 
+*/
+.explorer-folders-view > .monaco-list > .monaco-scrollable-element {
+  .monaco-list-rows[style*="height"] {
+    transition: height 100ms ease-out;
+  }
+  .monaco-list-row {
+    animation: fileTopInAnimate 0.2s ease;
+  }
+
+  .monaco-list-row[style*="top"] {
+    transition: top 0.2s cubic-bezier(0.41, 0.61, 0, 1.1), scale 0.1s ease;
+  }
+
+  .monaco-list-row.selected {
+    scale: 1.02;
+    span.monaco-icon-name-container::after {
+      content: "🔍";
+      margin-left: 1em;
+      display: inline-block;
+      animation: fileSelectedhandRightInAnimate 0.3s ease;
+    }
+  }
+
+  .monaco-list-row:hover {
+    span.monaco-icon-name-container::after {
+      content: "👈";
+      margin-left: 1em;
+      display: inline-block;
+      animation: fileSelectedhandRightInAnimate 0.3s ease;
+    }
+  }
+  /* 清除全局样式 */
+  .monaco-list-row.focused {
+    scale: 1 !important;
+    transform: none !important;
+    width: 97%;
+  }
+}
+
+@keyframes fileSelectedhandRightInAnimate {
+  0% {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  40% {
+    opacity: 1;
+    transform: translateX(2%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* 文件选择页面里面的下滑动画 */
+@keyframes fileTopInAnimate {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+/* 关键字高亮 */
+span.mtk8 {
+  --font-color-0: #bbbbbb;
+  --font-color-1: #fede5d;
+  text-shadow: 0 0 4px var(--font-color-1);
+  animation: fadeLightIn 0.5s ease-in forwards;
+}
+
+/* span.mtk1 {
+  color: rgb(216, 201, 134) !important;
+} */
+
+/* 命令框 */
+div.quick-input-widget {
+  --vscode-quickInput-background: transparent !important;
+  backdrop-filter: blur(12px) brightness(150%);
+  top: 20vh !important;
+  animation: fadeBigIn 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+div.quick-input-widget::after {
+  content: "";
+  position: fixed;
+  top: -100vh;
+  left: -100vw;
+  width: 210vw;
+  height: 210vh;
+  z-index: -1;
+  background-color: rgba(22, 22, 22, 0.5);
+  filter: blur(20px);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* 顶上的输入框 */
+div.command-center {
+  animation: fadeIn 0.3s ease;
+}
+
+div.command-center.hide {
+  animation: fadeOut 0.2s ease;
+}
+
+/* div.quick-input-widget::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(22, 22, 22, 0.5);
+  filter: blur(10px);
+  animation: fadeIn 0.5s ease;
+} */
+
+/* 命令框的文本输入框 */
+div.ibwrapper {
+  --font-color-0: #fff;
+  --font-color-1: #fff;
+  animation: fadeLightIn 0.2s ease-in;
+}
+
+/* 查找 替换 窗口 */
+div.monaco-editor .find-widget {
+  background-color: transparent !important;
+  backdrop-filter: blur(20px) brightness(150%);
+}
+
+/* 右键菜单-活动栏 */
+.monaco-menu-container {
+  background-color: transparent !important;
+  backdrop-filter: blur(20px) brightness(120%);
+  border-radius: 12px;
+  animation: 300ms ease forwards !important;
+}
+
+@keyframes rightClickMenuFadeBigIn {
+  0% {
+    opacity: 0;
+    scale: 0.9;
+  }
+  40% {
+    opacity: 0.8;
+    scale: 1.02;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+/* 各种输入 */
+div.monaco-inputbox {
+  background-color: transparent !important;
+}
+
+/* 所在行数 */
+div.active-line-number {
+  --font-color-0: var(--vscode-editorLineNumber-foreground);
+  --font-color-1: #fff;
+  color: var(--font-color-1) !important;
+  animation: fadeLightBigIn 0.5s ease forwards;
+}
+
+/* 不在的行数 */
+/* div.line-numbers {
+  animation: fadeLightOut 0.5s ease-out forwards;
+} */
+
+/* 滚动的时候黏在上面的代码 */
+div.sticky-widget {
+  background-color: transparent !important;
+  backdrop-filter: blur(20px) brightness(110%);
+  animation: topIn 0.5s cubic-bezier(0.41, 0.61, 0, 1.2) forwards;
+}
+
+.overflowingContentWidgets {
+  /* 代码提示框 */
+  .editor-widget.suggest-widget.shows-details {
+    transition: top 100ms ease, left 300ms ease;
+    animation: fadeBigIn 100ms ease;
+  }
+  /* 鼠标悬停在代码上的提示框 */
+  .monaco-hover:not(.hidden) {
+    animation: fadeBigIn 0.1s ease;
+  }
+}
+
+.overflowingOverlayWidgets {
+  /* 代码提示框行的提示框 */
+  .suggest-details {
+    animation: fadeBigIn 100ms ease;
+  }
+}
+
+@keyframes fadeTopIn-codeIdea {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+/* @keyframes codeIdeaAnimate {
+  0% {}
+} */
+
+/* 鼠标悬停某些标签上的文字提示 */
+.context-view.monaco-component.top.left[style*="left"],
+.context-view.monaco-component.top.left[style*="top"] {
+  /* transition-property: left top;
+  transition-duration: 200ms;
+  transition-timing-function: ease; */
+}
+
+.context-view.monaco-component.bottom.left[style*="left"],
+.context-view.monaco-component.bottom.left[style*="top"] {
+  animation: fadeBigIn 100ms ease;
+}
+
+/* 通知 */
+.notifications-center.visible {
+  animation: fadeBigIn 100ms ease;
+}
+
+/* 底栏 */
+footer.part.statusbar
+
+/* 侧边栏 */
+/* div.split-view-view.visible .part.activitybar.left {
+  
+} */
+
+/* Code 左侧边线 */
+div.view-lines.monaco-mouse-cursor-text {
+  box-shadow: 0 0 4px 2px rgb(22, 25, 27);
+}
+
+div.monaco-split-view2.vertical.separator-border {
+  --separator-border: #495495;
+}
+
+div.cursor.monaco-mouse-cursor-text {
+  width: 3px !important;
+}
+
+/* 炫酷光标 */
+div.cursor {
+  animation: 25s linear infinite alternate bp-animation;
+  /* background: linear-gradient(cyan); */
+
+  /* 🌈🌈🌈 炫酷的彩虹光效！🌈🌈🌈 */
+  /* 使用方法：注掉上面那个，用下面这个就行。 */
+  background: linear-gradient(
+    #ff0000,
+    #ff7f00,
+    #ffff00,
+    #00ff00,
+    #00ffff,
+    #0000ff,
+    #8b00ff
+  );
+
+  background-size: 100% 1000%;
+  border-radius: 2px;
+  overflow: visible !important;
+}
+div.cursor::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  background-size: 100% 1000%;
+  border-radius: 3px;
+  transform: scale(140%, 120%);
+  filter: blur(4px) brightness(200%);
+  z-index: -1;
+}
+@keyframes bp-animation {
+  0% {
+    background-position: 0 0;
+  }
+  20% {
+    background-position: 0 200%;
+  }
+  40% {
+    background-position: 0 400%;
+  }
+  60% {
+    background-position: 0 600%;
+  }
+  80% {
+    background-position: 0 800%;
+  }
+  100% {
+    background-position: 0 1000%;
+  }
+}
+
+/* 字体渐渐变亮 */
+@keyframes fadeLightIn {
+  0% {
+    color: var(--font-color-0);
+    text-shadow: 0 0 0 var(--font-color-0);
+  }
+  100% {
+    color: var(--font-color-1);
+    text-shadow: 0 0 20px var(--font-color-1);
+  }
+}
+
+/* 变亮变大 */
+@keyframes fadeLightBigIn {
+  0% {
+    scale: 1;
+    color: var(--font-color-0);
+    text-shadow: 0 0 0 var(--font-color-0);
+  }
+  40% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1;
+    color: var(--font-color-1);
+    text-shadow: 0 0 20px var(--font-color-1);
+  }
+}
+
+/* 字体渐渐不亮 */
+@keyframes fadeLightOut {
+  0% {
+    text-shadow: 0 0 20px #fff;
+  }
+  100% {
+    text-shadow: 0 0 0;
+  }
+}
+
+@keyframes topIn {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeBigIn {
+  0% {
+    opacity: 0;
+    transform: scale(90%);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(105%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
+
+@keyframes hoverFadeBigIn {
+  0% {
+    opacity: 0;
+    scale: 0.9;
+  }
+  40% {
+    opacity: 1;
+    scale: 1.05;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}

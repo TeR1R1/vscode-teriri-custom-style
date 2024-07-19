@@ -1,0 +1,8 @@
+.cursor {
+    &[style*="top"],
+    &[style*="left"] {
+        transition-property: top, left;
+        transition-duration: 200ms;
+        transition-timing-function: cubic-bezier(0, 1.61, 0.32, 0.75) !important;
+    }
+}

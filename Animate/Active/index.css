@@ -1,0 +1,31 @@
+/* 列表聚焦动画 */
+/* 示例：Ctrl + R */
+
+/* .monaco-list-row:not(.explorer-folders-view .monaco-list-row, .code-cell-row) {
+  scale: 0.98;
+  transition: translateX 300ms, scale 300ms, width 200ms;
+}
+.monaco-list-row:not(.explorer-folders-view .monaco-list-row, .code-cell-row).focused {
+  scale: 1;
+  transform: translateX(0.5rem);
+  width: 98.5%;
+} */
+
+
+.monaco-list-row {
+  scale: 1;
+  transition: translateX 300ms, scale 300ms, width 200ms;
+}
+
+.monaco-list-row:hover {
+  scale: 1.01;
+  width: 98%;
+}
+
+.monaco-list-row.focused {
+  scale: 1.02;
+  transform: translateX(0.5rem);
+  width: 97%;
+}
+
+

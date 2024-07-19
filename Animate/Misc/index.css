@@ -1,0 +1,94 @@
+/* 为各区块添加平移过渡动画 */
+/* 示例：最大化和窗口化相切换可以看出来 */
+/* 注意: 这是 scss 编译而来, 不推荐阅读。 */
+.monaco-workbench:not(
+    .monaco-workbench:has(.monaco-sash.active),
+    .monaco-workbench:has(iframe)
+  )
+  .split-view-container
+  div[style*="top"]:not(
+    .monaco-editor .overflowingContentWidgets,
+    .monaco-editor .overflowingContentWidgets *,
+    .monaco-editor .margin,
+    .monaco-editor .margin *,
+    .monaco-editor .context-view,
+    .monaco-editor .context-view *,
+    .editor-scrollable *,
+    .monaco-list-rows,
+    .monaco-list-rows *,
+    .scrollbar,
+    .split-view-view:has(> .terminal-outer-container),
+    .terminal-outer-container *,
+    .notifications-toasts *,
+    .zone-widget,
+    .monaco-menu-container
+  ),
+.monaco-workbench:not(
+    .monaco-workbench:has(.monaco-sash.active),
+    .monaco-workbench:has(iframe)
+  )
+  .split-view-container
+  div[style*="left"]:not(
+    .monaco-editor .overflowingContentWidgets,
+    .monaco-editor .overflowingContentWidgets *,
+    .monaco-editor .margin,
+    .monaco-editor .margin *,
+    .monaco-editor .context-view,
+    .monaco-editor .context-view *,
+    .editor-scrollable *,
+    .monaco-list-rows,
+    .monaco-list-rows *,
+    .scrollbar,
+    .split-view-view:has(> .terminal-outer-container),
+    .terminal-outer-container *,
+    .notifications-toasts *,
+    .zone-widget,
+    .monaco-menu-container
+  ),
+.monaco-workbench:not(
+    .monaco-workbench:has(.monaco-sash.active),
+    .monaco-workbench:has(iframe)
+  )
+  .split-view-container
+  div[style*="width"]:not(
+    .monaco-editor .overflowingContentWidgets,
+    .monaco-editor .overflowingContentWidgets *,
+    .monaco-editor .margin,
+    .monaco-editor .margin *,
+    .monaco-editor .context-view,
+    .monaco-editor .context-view *,
+    .editor-scrollable *,
+    .monaco-list-rows,
+    .monaco-list-rows *,
+    .scrollbar,
+    .split-view-view:has(> .terminal-outer-container),
+    .terminal-outer-container *,
+    .notifications-toasts *,
+    .zone-widget,
+    .monaco-menu-container
+  ),
+.monaco-workbench:not(
+    .monaco-workbench:has(.monaco-sash.active),
+    .monaco-workbench:has(iframe)
+  )
+  .split-view-container
+  div[style*="height"]:not(
+    .monaco-editor .overflowingContentWidgets,
+    .monaco-editor .overflowingContentWidgets *,
+    .monaco-editor .margin,
+    .monaco-editor .margin *,
+    .monaco-editor .context-view,
+    .monaco-editor .context-view *,
+    .editor-scrollable *,
+    .monaco-list-rows,
+    .monaco-list-rows *,
+    .scrollbar,
+    .split-view-view:has(> .terminal-outer-container),
+    .terminal-outer-container *,
+    .notifications-toasts *,
+    .zone-widget,
+    .monaco-menu-container
+  ) {
+  transition-property: top, left, width, height;
+  transition-duration: 300ms;
+}
