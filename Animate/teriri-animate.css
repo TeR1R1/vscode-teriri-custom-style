@@ -275,15 +275,22 @@ div.sticky-widget {
   animation: topIn 0.5s cubic-bezier(0.41, 0.61, 0, 1.2) forwards;
 }
 
+
 .overflowingContentWidgets {
   /* 代码提示框 */
-  .editor-widget.suggest-widget.shows-details {
-    transition: top 100ms ease, left 300ms ease;
+  .editor-widget.suggest-widget {
+    transition:
+      top 100ms ease,
+      left 300ms ease,
+      top 300ms, height 300ms;
     animation: fadeBigIn 100ms ease;
   }
   /* 鼠标悬停在代码上的提示框 */
   .monaco-hover:not(.hidden) {
     animation: fadeBigIn 0.1s ease;
+  }
+  div[widgetid="editor.contrib.resizableContentHoverWidget"] {
+    transition: top 200ms ease, left 300ms ease;
   }
 }
 
