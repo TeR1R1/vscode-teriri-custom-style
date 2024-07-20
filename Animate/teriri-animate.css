@@ -88,6 +88,13 @@
   }
 }
 
+/* 拓展插件，侧边栏 */
+.extensions-list > .monaco-list > .monaco-scrollable-element {
+  .monaco-list-row {
+    transition: scale 300ms, width 200ms;
+  }
+}
+
 /* 文件侧边栏 */
 /* 需要实现两个类：
     .selected
