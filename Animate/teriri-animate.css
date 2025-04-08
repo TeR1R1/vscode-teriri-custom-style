@@ -21,9 +21,26 @@
 }
 /* 主进程窗口全局字体 (中文状态) */
 .windows:lang(zh-Hans) {
-  font-family: "HarmonyOS Sans NaskhArabic UI", "HarmonyOS Sans SC", monospace;
+  font-family: "JetBrains Mono NL", "LXGW Wenkai Mono", monospace;
   font-weight: 500;
 }
+
+/* 输出栏字体 */
+.monaco-action-bar .action-label{
+  font-size: 15px;
+}
+
+/* 侧边栏一级标题字体 */
+.monaco-workbench .part>.title>.title-label h2 {
+  font-size: 15px;
+}
+
+/* 侧边栏侧边栏二级标题字体 */
+.monaco-pane-view .pane>.pane-header h3.title {
+  font-size: 13px;
+}
+
+/* 侧边栏侧边栏三级标题字体（默认11刚好） */
 
 /* 全局字体渐变 */
 /* span {
@@ -228,9 +245,9 @@ div.monaco-editor .find-widget {
   backdrop-filter: blur(20px) brightness(150%);
 }
 
-/* 右键菜单-活动栏 */
-.monaco-menu-container {
-  background-color: transparent !important;
+/* 最上面的菜单及其子菜单 */
+div.menubar-menu-items-holder.monaco-menu-container {
+  background-color: rgba(7, 82, 233, 0.336) !important;
   backdrop-filter: blur(20px) brightness(120%);
   border-radius: 12px;
   animation: 300ms ease forwards !important;
@@ -288,6 +305,8 @@ div.sticky-widget {
   /* 鼠标悬停在代码上的提示框 */
   .monaco-hover:not(.hidden) {
     animation: fadeBigIn 0.1s ease;
+    max-height: 500px !important;
+    overflow-y: auto !important;
   }
   div[widgetid="editor.contrib.resizableContentHoverWidget"] {
     transition: top 200ms ease, left 300ms ease;
