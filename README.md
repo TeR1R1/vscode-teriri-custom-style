@@ -99,11 +99,10 @@
 
 ---
 
-# 使用方法：
+# 使用方法(2025 年 4 月 8 日修改，by kuma)：
 1. 安装 CSS 加载器，我用的是 <a href="https://marketplace.visualstudio.com/items?itemName=drcika.apc-extension">Apc Customize UI++</a>, 当然你可以选择诸如 `Custom CSS and JS Loader` 之类的，能加载 CSS 文件就行。
 2. 导入里面所有 CSS 文件：
    ```
-   # 文档撰写日期为 2024 年 7 月 20 日 00:24:46，该文件列表可能具有时效性。
    vscode-teriri-custom-style/index.css
    vscode-teriri-custom-style/temp.css
    vscode-teriri-custom-style/Style/Active/index.css
@@ -111,7 +110,7 @@
    vscode-teriri-custom-style/Animate/teriri-animate.css
    vscode-teriri-custom-style/Animate/Active/index.css
    vscode-teriri-custom-style/Animate/Scrolling/index.css
-   vscode-teriri-custom-style/Animate/Misc/index.css
+   // vscode-teriri-custom-style/Animate/Misc/index.css(需要注释掉这个，不然会很卡影响性能)
    vscode-teriri-custom-style/Animate/Tabs/index-flip.css
    ```
    
@@ -123,3 +122,4 @@
     - 样式: 添加圆角与毛玻璃效果。
     - 动画: 添加非线性交互动画，添加移动过渡。
 - 2024.7.9: 初始化远程仓库。
+- 2025.4.8: 修改 teriri-animate.css ，使其适配vscode(by kuma)。
