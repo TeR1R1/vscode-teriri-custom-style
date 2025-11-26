@@ -53,6 +53,7 @@
     backdrop-filter: blur(12px) brightness(120%);
   }
 }
+
 /* 鼠标悬停在代码上的提示框 */
 .monaco-hover:not(.hidden) {
   padding: 1em 2em !important;

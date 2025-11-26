@@ -2,3 +2,10 @@
 .vscode
 .tags
 node_modules
+
+index.html
+index.css
+temp.css
+temp.css.map
+temp.scss
+Class List Notes.md
