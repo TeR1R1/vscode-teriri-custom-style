@@ -63,6 +63,8 @@
   border-radius: 12px !important;
   background-color: rgba(40, 44, 52, 0.2) !important;
   backdrop-filter: blur(8px) brightness(120%);
+  width: max-content !important;
+  min-width: fit-content !important;
 }
 
 /* 代码提示框行的提示框 */

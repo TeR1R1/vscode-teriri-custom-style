@@ -188,6 +188,10 @@ div.quick-input-widget {
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
+div.quick-input-widget input[type="text"] {
+  border: none !important;
+}
+
 div.quick-input-widget::after {
   content: "";
   position: fixed;
@@ -196,7 +200,7 @@ div.quick-input-widget::after {
   width: 210vw;
   height: 210vh;
   z-index: -1;
-  background-color: rgba(22, 22, 22, 0.5);
+  background-color: rgba(0, 0, 0, 0.1);
   filter: blur(20px);
   animation: fadeIn 0.5s ease forwards;
 }
@@ -235,7 +239,13 @@ div.monaco-editor .find-widget {
   backdrop-filter: blur(20px) brightness(150%);
 }
 
-/* 右键菜单-活动栏 */
+/* 二级菜单修复 */
+.action-item .monaco-submenu {
+  background-color: #241B2FEE !important;
+}
+
+
+/* 菜单容器 */
 .monaco-menu-container {
   background-color: transparent !important;
   backdrop-filter: blur(20px) brightness(120%);
@@ -295,6 +305,8 @@ div.sticky-widget {
   /* 鼠标悬停在代码上的提示框 */
   .monaco-hover:not(.hidden) {
     animation: fadeBigIn 0.1s ease;
+    max-height: 500px !important;
+    overflow-y: auto !important;
   }
   div[widgetid="editor.contrib.resizableContentHoverWidget"] {
     transition: top 200ms ease, left 300ms ease;
